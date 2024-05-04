@@ -1,6 +1,6 @@
 import {Alert, AlertDescription, AlertTitle} from "@/components/ui/alert";
 import { Terminal } from "lucide-react"
-import {Button} from "@/components/ui/button";
+import Button from '@mui/material/Button';
 
 export default function Home() {
 
@@ -11,11 +11,11 @@ export default function Home() {
   return (
     <>
       <Alert>
-        <Terminal className="h-4 w-4" />
+        <Terminal className="w-4 h-4" />
         <AlertTitle>Heads up!</AlertTitle>
         <AlertDescription>
           TailwindCSS is setup with Radix and Shadcn UI <br/>
-          <Button size={'sm'} onClick={redirectToDocs}>Docs Here</Button>
+          <Button variant="contained">Hello world</Button>
         </AlertDescription>
       </Alert>
     </>
