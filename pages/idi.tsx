@@ -22,7 +22,7 @@ const SampleJdList = () => {
     const fetchData = async () => {
       try {
         const requestBody = {
-          limit: 12,
+          limit: 100,
           offset: 0
         };
 
