@@ -39,7 +39,7 @@ const JobCard: React.FC<JobCardProps> = ({ data }) => {
           </p>
         </div>
         <div className="flex items-center justify-start gap-4">
-          <img src={data.logoUrl} alt={data.companyName} className="w-20 h-20 rounded-full" />
+        <img src={data.logoUrl} alt={data.companyName} className="w-20 h-20 rounded-full" />
           <div className="flex flex-col items-start justify-center">
             <h2 className="mb-2 text-xl font-bold text-gray-500">{data.companyName}</h2>
             <p className="mb-2 text-gray-700">{data.jobRole}</p>
