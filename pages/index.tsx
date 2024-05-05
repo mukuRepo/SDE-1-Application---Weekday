@@ -111,7 +111,9 @@ const SampleJdList = () => {
               label="Min Experience"
               type="number"
               // mukuRepo
+              className='w-full'
               value={filters.minExp === null ? '' : filters.minExp} // Adjusted logic
+              //@ts-ignore
               onChange={(e) => setFilters({ ...filters, minExp: e.target.value === '' ? -9999999999999 : parseInt(e.target.value) })}
             />
           </Box>
@@ -119,6 +121,7 @@ const SampleJdList = () => {
             <TextField
               id="company-name"
               label="Company Name"
+              className='w-full'
               value={filters.companyName}
               onChange={(e) => setFilters({ ...filters, companyName: e.target.value })}
             />
@@ -127,6 +130,7 @@ const SampleJdList = () => {
             <TextField
               id="location"
               label="Location"
+              className='w-full'
               value={filters.location}
               onChange={(e) => setFilters({ ...filters, location: e.target.value })}
             />
@@ -135,6 +139,7 @@ const SampleJdList = () => {
             <TextField
               id="tech-stack"
               label="Tech Stack"
+              className='w-full'
               value={filters.techStack}
               // mukuRepo
               onChange={(e) => setFilters({ ...filters, techStack: e.target.value })}
@@ -146,6 +151,7 @@ const SampleJdList = () => {
               <Select
                 labelId="remote-label"
                 id="remote-select"
+                className='w-full'
                 value={filters.remote}
                 onChange={(e) => setFilters({ ...filters, remote: e.target.value as string })}
               >
@@ -159,6 +165,7 @@ const SampleJdList = () => {
             <TextField
               id="role"
               label="Role"
+              className='w-full'
               value={filters.role}
               onChange={(e) => setFilters({ ...filters, role: e.target.value })}
             />
@@ -168,7 +175,9 @@ const SampleJdList = () => {
               id="min-base-pay"
               label="Min Base Pay Salary"
               type="number"
+              className='w-full'
               value={filters.minBasePay === null ? '' : filters.minBasePay} // Adjusted logic
+              //@ts-ignore
               onChange={(e) => setFilters({ ...filters, minBasePay: e.target.value === '' ? -99999999999 : parseInt(e.target.value) })}
             />
           </Box>
