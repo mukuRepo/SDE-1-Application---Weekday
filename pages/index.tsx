@@ -186,9 +186,9 @@ const SampleJdList = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <ul className='flex flex-wrap w-full'>
+        <ul className='flex flex-wrap w-full gap-5'>
           {filteredJdList.map((jd:any, index) => (
-            <li key={index} className='w-full sm:w-1/3'>
+            <li key={index} className='w-full md:w-[490px]'>
               {/* mukuRepo/ */}
               <JobCardProps data={jd} />
             </li>
