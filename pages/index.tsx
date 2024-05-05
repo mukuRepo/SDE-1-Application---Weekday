@@ -30,13 +30,13 @@ const SampleJdList = () => {
   const [offset, setOffset] = useState(0);
   const [hasMore, setHasMore] = useState(true);
   const [filters, setFilters] = useState({
-    minExp: -1,
+    minExp: null,
     companyName: '',
     location: '',
     remote: '',
     techStack: '',
     role: '',
-    minBasePay: -1,
+    minBasePay: null,
   });
 
   useEffect(() => {
@@ -91,7 +91,7 @@ const SampleJdList = () => {
 
     const filteredJdList = jdList.filter(jd => {
       return (
-        (filters.minExp === null || jd.minExp !== null && jd.minExp >= filters.minExp) &&
+        (filters.minExp === null || jd.minExp !== null && jd.minExp <= filters.minExp) &&
         (filters.companyName === '' || jd.companyName.toLowerCase().includes(filters.companyName.toLowerCase())) &&
         (filters.location === '' || jd.location.toLowerCase().includes(filters.location.toLowerCase())) &&
         (filters.remote === '' || jd.location.toLowerCase() === filters.remote.toLowerCase()) &&
@@ -111,8 +111,8 @@ const SampleJdList = () => {
               label="Min Experience"
               type="number"
               // mukuRepo
-              value={filters.minExp || ''}
-              onChange={(e) => setFilters({ ...filters, minExp: parseInt(e.target.value) })}
+              value={filters.minExp === null ? '' : filters.minExp} // Adjusted logic
+              onChange={(e) => setFilters({ ...filters, minExp: e.target.value === '' ? -9999999999999 : parseInt(e.target.value) })}
             />
           </Box>
           <Box className="w-full">
@@ -168,8 +168,8 @@ const SampleJdList = () => {
               id="min-base-pay"
               label="Min Base Pay Salary"
               type="number"
-              value={filters.minBasePay || ''}
-              onChange={(e) => setFilters({ ...filters, minBasePay: parseInt(e.target.value) || 0 })}
+              value={filters.minBasePay === null ? '' : filters.minBasePay} // Adjusted logic
+              onChange={(e) => setFilters({ ...filters, minBasePay: e.target.value === '' ? -99999999999 : parseInt(e.target.value) })}
             />
           </Box>
 
